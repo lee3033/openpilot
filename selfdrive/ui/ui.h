@@ -52,7 +52,7 @@ struct Alert {
         return {"오픈파일럿을 사용할수없습니다", "프로세스가 준비중입니다",
                 "controlsWaiting", cereal::ControlsState::AlertSize::MID,
                 AudibleAlert::NONE};
-      } else if (controls_missing > CONTROLS_TIMEOUT) {
+      } else if (controls_missing > CONTROLS_TIMEOUT && !Hardware::PC()) {
         // car is started, but controls is lagging or died
         if (cs.getEnabled() && (controls_missing - CONTROLS_TIMEOUT) < 10) {
           //return {"TAKE CONTROL IMMEDIATELY", "Controls Unresponsive",
