@@ -400,4 +400,4 @@ class SccSmoother:
         ButtonCnt %= 70
       v_cruise_kph = clip(v_cruise_kph, MIN_SET_SPEED_KPH, MAX_SET_SPEED_KPH)
 
-    return v_cruise_kph
+    return 
